@@ -33,7 +33,7 @@ using MyAllocator = std::allocator<T>;
 
 // カスタムアロケータを使用するStack型
 template <class T>
-using MyStack = Stack<T, MyAllocator<T>>;
+using MyStack = Stack<T, MyAllocator<T> >;
 
 int main()
 {
