@@ -11,8 +11,6 @@
 
 using namespace std;
 
-template <template<class T, class A = allocator<T> >
-          class Container>
 class Phonebook {
   struct Record {
     string name;
@@ -23,10 +21,12 @@ class Phonebook {
       return stream << r.name << ':' << r.phone;
     }
   };
-  Container<Record> book;
+  vector<Record> book;
 public:
   void add(const string& name, const string& phone)
   {
+    // NG: book.emplace_back(name,phone);
+    // NG: book.add(name,phone);
     book.push_back( Record( name, phone ) );
   }
 
@@ -39,7 +39,7 @@ public:
 
 int main()
 {
-  Phonebook<vector> pb; // list,deque も指定可能
+  Phonebook pb; // list,deque も指定可能
   pb.add("police", "110");
   pb.add("fire", "119");
   pb.add("weather", "177");
