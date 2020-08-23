@@ -11,7 +11,7 @@ public:
     //  「飛ぶ」関数
     void fly(){ cout << "にわとりは飛べません" << endl; }
 
-	~CChicken() { cout << "dead chiken" << endl; }
+    virtual ~CChicken() { cout << "dead chiken" << endl; }
 };
  
 #endif // _CHICKEN_H_
